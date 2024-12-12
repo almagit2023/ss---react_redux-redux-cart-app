@@ -1,5 +1,6 @@
 import React from 'react'
 import NavBar from './components/NavBar/NavBar';
+import 'react-toastify/dist/ReactToastify.css';
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Home from './pages/Home/Home';
 import Cart from './pages/Cart/Cart';

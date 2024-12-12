@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { incrementProduct, decrementProduct, removeProduct } from '../../redux/actions/cartActions';
 import './Cart.css';
 import EmptyCart from './EmptyCart';
+import { handleError } from '../../util';
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart); // Access the cart from the Redux store
@@ -19,10 +20,10 @@ const Cart = () => {
 
   const handleRemove = (id) => {
     dispatch(removeProduct(id));
+    handleError("Product removed from Cart")
   };
 
-  const calculateTotal = () =>
-    cart.reduce((acc, product) => acc + product.price * product.count, 0).toFixed(2);
+  const calculateTotal = cart.reduce((acc, product) => acc + product.price * product.count, 0).toFixed(2);
 
   return (
     <div className='cartBlock'>
@@ -61,7 +62,9 @@ const Cart = () => {
           </tbody>
         </table>
       )}
-      <h3 className='totalCost'>Total: ${calculateTotal()}</h3>
+      {calculateTotal > 0 && (
+        <h3 className='totalCost'>Total: ${calculateTotal}</h3>
+      )}
     </div>
   );
 };

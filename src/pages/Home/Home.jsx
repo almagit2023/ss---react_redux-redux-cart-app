@@ -3,6 +3,7 @@ import './Home.css'
 import { useDispatch } from 'react-redux'
 import { addProduct } from '../../redux/actions/cartActions'
 import axios from 'axios'
+import { handleSuccess } from '../../util'
 
 const Home = () => {
 
@@ -35,6 +36,7 @@ const Home = () => {
 
   const handleAddProduct = (product) => {
     dispatch(addProduct(product))
+    handleSuccess("New product added to cart")
   }
 
   return (
