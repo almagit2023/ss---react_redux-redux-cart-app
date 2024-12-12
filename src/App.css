@@ -1,0 +1,8 @@
+.cartHeader {
+  margin: 0 auto;
+  text-align: center;
+  background-color: navy;
+  padding: 2rem;
+  color: #e2e2e2;
+  width: 90%;
+}

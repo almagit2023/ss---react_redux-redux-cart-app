@@ -1,0 +1,35 @@
+.productBlock {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.productItem {
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  margin: 1rem;
+  width: 33%;
+  padding: 1rem;
+}
+
+.productItem p:nth-child(3) {
+  font-weight: 900;
+}
+
+.addToCartBtn {
+  border: none;
+  background: blue;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  color: white;
+  margin-top: 0.75rem;
+}
+
+.addToCartBtn:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease;
+  background-color: limegreen;
+  cursor: pointer;
+}

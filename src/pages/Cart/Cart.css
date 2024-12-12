@@ -1,0 +1,26 @@
+/* src/pages/Cart/Cart.css */
+.cartBlock {
+  padding: 20px;
+}
+
+.cartTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cartTable th,
+.cartTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.cartTable th {
+  background-color: #f4f4f4;
+}
+
+button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
