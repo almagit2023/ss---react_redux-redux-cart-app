@@ -1,6 +1,7 @@
 /* src/pages/Cart/Cart.css */
 .cartBlock {
   padding: 20px;
+  text-align: center;
 }
 
 .cartTable {
@@ -23,4 +24,23 @@ button {
   margin: 0 5px;
   padding: 5px 10px;
   cursor: pointer;
+}
+
+.emptyCartPage {
+  margin: 0 auto;
+  text-align: center;
+  padding: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid gray;
+  width: 50%;
+}
+
+.totalCost {
+  margin-top: 2rem;
+  font-size: 2rem;
+  background: rgba(128, 0, 128, 0.4);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
 }

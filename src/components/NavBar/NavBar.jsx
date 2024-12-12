@@ -15,7 +15,7 @@ const NavBar = () => {
       </Link>
       <Link to="/cart" className="navigationItem cartLink">
         Cart
-        {totalCount > 0 && <span className="cartBadge">{totalCount}</span>}
+        {totalCount > 0 && <span className="cartBadge"><sup>{totalCount}</sup></span>}
       </Link>
     </div>
   );

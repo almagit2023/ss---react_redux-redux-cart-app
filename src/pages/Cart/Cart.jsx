@@ -3,6 +3,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { incrementProduct, decrementProduct, removeProduct } from '../../redux/actions/cartActions';
 import './Cart.css';
+import EmptyCart from './EmptyCart';
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart); // Access the cart from the Redux store
@@ -27,7 +28,9 @@ const Cart = () => {
     <div className='cartBlock'>
       <h2>Cart</h2>
       {cart.length === 0 ? (
-        <p>Your cart is empty!</p>
+        <div className='emptyCartPage'>
+          <EmptyCart />
+        </div>
       ) : (
         <table className='cartTable'>
           <thead>
@@ -45,20 +48,20 @@ const Cart = () => {
                 <td>{product.title}</td>
                 <td>${product.price}</td>
                 <td>
-                  <button onClick={() => handleDecrement(product.id)}>-</button>
+                  <button onClick={() => handleDecrement(product.id)} style={{ border: 'none', background: 'orangered', color: '#fff', padding: '8px 16px', borderRadius: '0.5rem' }}>-</button>
                   {product.count}
-                  <button onClick={() => handleIncrement(product.id)}>+</button>
+                  <button onClick={() => handleIncrement(product.id)} style={{ border: 'none', background: 'green', color: '#fff', padding: '8px 16px', borderRadius: '0.5rem' }} >+</button>
                 </td>
                 <td>${(product.price * product.count).toFixed(2)}</td>
                 <td>
-                  <button onClick={() => handleRemove(product.id)}>Remove</button>
+                  <button onClick={() => handleRemove(product.id)} style={{ border: 'none', background: 'red', color: '#fff', padding: '8px 16px', borderRadius: '0.5rem' }}>Remove</button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       )}
-      <h3>Total: ${calculateTotal()}</h3>
+      <h3 className='totalCost'>Total: ${calculateTotal()}</h3>
     </div>
   );
 };
